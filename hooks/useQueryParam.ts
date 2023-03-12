@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router';
 
 export type UrlQueryParams = {
-  'queryKey'?: string;
-	'queryKey2'?: string | string[];
+	'queryKey'?: string[];
 };
 
 export const useQueryParam = <T extends keyof UrlQueryParams>(queryKey: T) => {

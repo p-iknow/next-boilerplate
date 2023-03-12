@@ -1,9 +1,8 @@
 import { useRouter } from 'next/router';
 
-type ParamKeys =
+export type ParamKeys =
   | 'id'
 	| 'id2'
-
 
 /**
 * @description In the case of pathParam, there is no chance of it being undefined,
