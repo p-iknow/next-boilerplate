@@ -1,0 +1,20 @@
+name: Label Pull Request
+
+on:
+  - pull_request
+
+jobs:
+  triage:
+    runs-on: [self-hosted, default]
+    steps:
+      - uses: actions/labeler@v2
+        with:
+          repo-token: ${{ secrets.GH_ACCESS_TOKEN }}
+          configuration-path: .github/labeler.yml
+
+  assign-author:
+    runs-on: [self-hosted, default]
+    steps:
+      - uses: toshimaru/auto-author-assign@v1.6.2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
