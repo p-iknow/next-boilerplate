@@ -1,5 +1,4 @@
-import { UrlQueryParams, useQueryParam } from '@/hooks'
-import { usePathParam } from '@/hooks/usePathParm'
+import { UrlQueryParams } from '@/hooks'
 import { GetServerSideProps, GetServerSidePropsContext } from 'next'
 import { useRouter } from 'next/router'
 import { isArray, isString } from 'remeda'

@@ -1,8 +1,6 @@
 import { UrlQueryParams, useQueryParam } from '@/hooks'
 import { usePathParam } from '@/hooks/usePathParm'
 import { GetServerSideProps, GetServerSidePropsContext } from 'next'
-import { useRouter } from 'next/router'
-import { isArray, isString } from 'remeda'
 import tw from 'twin.macro'
 
 interface Props {
