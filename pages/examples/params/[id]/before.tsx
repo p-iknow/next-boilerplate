@@ -2,19 +2,25 @@
 import { UrlQueryParams, useQueryParam } from '@/hooks';
 import { usePathParam } from '@/hooks/usePathParm';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import { useRouter } from 'next/router';
+import { isArray, isString } from 'remeda';
 import tw from 'twin.macro';
 
 interface Props {
-  queryKey: string | null;
+  queryKey: string[] | null;
 }
 
 export const UseQueryParamPage:React.FC<Props> = () => {
+  const router = useRouter();
+  const id = router.query.id;
+  const queryValue = router.query.queryKey;
 
-  const id = usePathParam('id');
-  const queryKey2  = useQueryParam('queryKey2') ?? 'default_queryKey2_value'
+  if (!isString(id) || !isArray(queryValue)) {
+    return null
+  }
 
 	return <div tw='flex justify-center items-center h-screen' >
-    <div css={tw`text-center m-auto`}>id: {id}<br />queryKey2: {queryKey2}</div>
+    <div css={tw`text-center m-auto`}>id: {id}<br />queryKey2: {queryValue}</div>
   </div>
 }
 
