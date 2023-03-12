@@ -15,9 +15,7 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
-    "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
-    "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.6",
     "@next/font": "13.2.4",
     "@tanstack/react-query": "^4.26.1",
