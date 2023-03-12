@@ -12,15 +12,14 @@ const queryClient = new QueryClient()
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-      <QueryClientProvider client={queryClient}>
-        <Hydrate state={pageProps.dehydratedState}>
-          <GlobalStyles />
-          <Component {...pageProps} />
-        </Hydrate>
-        <ReactQueryDevtools />
-      </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </Hydrate>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   )
 }
-
 
 export default App
